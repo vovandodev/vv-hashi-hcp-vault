@@ -13,7 +13,7 @@ variable "hvn_id" {
 variable "cloud_provider" {
   description = "The cloud provider where the HVN will be created (aws or azure)"
   type        = string
-  default     = "aws"
+  default     = "azure"
   
   validation {
     condition     = contains(["aws", "azure"], var.cloud_provider)
@@ -24,7 +24,7 @@ variable "cloud_provider" {
 variable "region" {
   description = "The region where the HVN and Vault cluster will be created"
   type        = string
-  default     = "us-west-2"
+  default     = "westus2"
 }
 
 variable "hvn_cidr_block" {
