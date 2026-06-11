@@ -38,8 +38,11 @@ This Terraform configuration creates a HashiCorp Cloud Platform (HCP) Vault clus
 In your HCP Terraform workspace, add the following variables:
 
 #### Environment Variables (Sensitive)
+**IMPORTANT**: Set these as **Environment Variables** (not Terraform Variables) in your workspace:
 - `HCP_CLIENT_ID` = your-hcp-client-id (mark as sensitive)
 - `HCP_CLIENT_SECRET` = your-hcp-client-secret (mark as sensitive)
+
+**Do NOT add these to any .tfvars file** - they should only exist as environment variables in the workspace settings.
 
 #### Terraform Variables
 Configure these in the workspace variables section:
