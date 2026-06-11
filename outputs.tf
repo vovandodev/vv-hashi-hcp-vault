@@ -65,13 +65,6 @@ output "vault_project_id" {
   value       = var.create_vault_cluster ? hcp_vault_cluster.vault_cluster[0].project_id : null
 }
 
-# Admin Token Output
-output "vault_admin_token" {
-  description = "The admin token for the Vault cluster (sensitive)"
-  value       = var.create_vault_cluster ? hcp_vault_cluster_admin_token.vault_token[0].token : null
-  sensitive   = true
-}
-
 # Connection Information
 output "vault_connection_info" {
   description = "Connection information for the Vault cluster"

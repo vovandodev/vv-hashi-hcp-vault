@@ -52,10 +52,3 @@ resource "hcp_vault_cluster" "vault_cluster" {
     }
   }
 }
-
-# HCP Vault Cluster Admin Token
-resource "hcp_vault_cluster_admin_token" "vault_token" {
-  count = var.create_vault_cluster ? 1 : 0
-  
-  cluster_id = hcp_vault_cluster.vault_cluster[0].cluster_id
-}
