@@ -1,8 +1,8 @@
 # HCP Authentication
-# Create a service principal in HCP and provide the credentials here
-# https://portal.cloud.hashicorp.com/orgs/<your-org>/settings/service-principals
-hcp_client_id     = "your-hcp-client-id"
-hcp_client_secret = "your-hcp-client-secret"
+# Set these as environment variables in your HCP Terraform workspace:
+# - HCP_CLIENT_ID (mark as sensitive)
+# - HCP_CLIENT_SECRET (mark as sensitive)
+# Create a service principal at: https://portal.cloud.hashicorp.com/orgs/<your-org>/settings/service-principals
 
 # HVN Configuration
 hvn_id         = "vault-hvn"

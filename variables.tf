@@ -1,15 +1,7 @@
-# HCP Authentication Variables
-variable "hcp_client_id" {
-  description = "HCP Service Principal Client ID"
-  type        = string
-  sensitive   = true
-}
-
-variable "hcp_client_secret" {
-  description = "HCP Service Principal Client Secret"
-  type        = string
-  sensitive   = true
-}
+# HCP Authentication is handled via environment variables:
+# - HCP_CLIENT_ID
+# - HCP_CLIENT_SECRET
+# Set these in your HCP Terraform workspace as environment variables
 
 # HVN Configuration
 variable "hvn_id" {

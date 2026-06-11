@@ -13,9 +13,8 @@ terraform {
 }
 
 # HCP Provider Configuration
+# Credentials are automatically read from HCP_CLIENT_ID and HCP_CLIENT_SECRET environment variables
 provider "hcp" {
-  client_id     = var.hcp_client_id
-  client_secret = var.hcp_client_secret
 }
 
 # HCP HVN (HashiCorp Virtual Network)
