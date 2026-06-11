@@ -46,8 +46,7 @@ Configure these in the workspace variables section:
 
 | Variable | Description | Example | Required |
 |----------|-------------|---------|----------|
-| `hcp_client_id` | HCP Service Principal Client ID | (use env var) | Yes |
-| `hcp_client_secret` | HCP Service Principal Secret | (use env var) | Yes |
+| `create_vault_cluster` | Create Vault cluster (false = HVN only) | `false` | No (default: false) |
 | `hvn_id` | HVN identifier | `vault-hvn` | No (has default) |
 | `cloud_provider` | Cloud provider (aws/azure) | `aws` | No (has default) |
 | `region` | Cloud region | `us-west-2` | No (has default) |
@@ -64,6 +63,34 @@ Configure these in the workspace variables section:
 2. HCP Terraform will automatically trigger a plan
 3. Review the plan in the HCP Terraform UI
 4. Approve and apply the changes
+
+## Managing HVN and Vault Cluster Independently
+
+By default, `create_vault_cluster` is set to `false`, which means only the HVN (HashiCorp Virtual Network) will be created. This allows you to:
+
+1. **Create HVN first**: Deploy just the network infrastructure
+2. **Add Vault later**: Set `create_vault_cluster = true` when ready
+3. **Remove Vault safely**: Set `create_vault_cluster = false` to destroy only the Vault cluster while keeping the HVN intact
+
+### Usage Examples
+
+**Step 1: Create HVN only**
+```hcl
+create_vault_cluster = false  # Default
+```
+This creates only the HVN, useful for setting up network infrastructure first.
+
+**Step 2: Add Vault cluster**
+```hcl
+create_vault_cluster = true
+```
+This adds the Vault cluster to the existing HVN.
+
+**Step 3: Remove Vault cluster (keep HVN)**
+```hcl
+create_vault_cluster = false
+```
+This destroys the Vault cluster but preserves the HVN for future use.
 
 ## Configuration Options
 

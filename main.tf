@@ -27,6 +27,8 @@ resource "hcp_hvn" "vault_hvn" {
 
 # HCP Vault Cluster
 resource "hcp_vault_cluster" "vault_cluster" {
+  count = var.create_vault_cluster ? 1 : 0
+  
   cluster_id      = var.vault_cluster_id
   hvn_id          = hcp_hvn.vault_hvn.hvn_id
   tier            = var.vault_tier
@@ -53,5 +55,7 @@ resource "hcp_vault_cluster" "vault_cluster" {
 
 # HCP Vault Cluster Admin Token
 resource "hcp_vault_cluster_admin_token" "vault_token" {
-  cluster_id = hcp_vault_cluster.vault_cluster.cluster_id
+  count = var.create_vault_cluster ? 1 : 0
+  
+  cluster_id = hcp_vault_cluster.vault_cluster[0].cluster_id
 }
