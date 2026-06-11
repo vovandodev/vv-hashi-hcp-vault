@@ -1,0 +1,22 @@
+# HCP Authentication
+# Create a service principal in HCP and provide the credentials here
+# https://portal.cloud.hashicorp.com/orgs/<your-org>/settings/service-principals
+hcp_client_id     = "your-hcp-client-id"
+hcp_client_secret = "your-hcp-client-secret"
+
+# HVN Configuration
+hvn_id         = "vault-hvn"
+cloud_provider = "aws"  # Options: aws, azure
+region         = "us-west-2"
+hvn_cidr_block = "172.25.16.0/20"
+
+# Vault Cluster Configuration
+vault_cluster_id = "vault-cluster"
+vault_tier       = "dev"  # Options: dev, starter_small, standard_small, standard_medium, standard_large, plus_small, plus_medium, plus_large
+public_endpoint  = true
+
+# Optional: Audit Logs and Metrics (Datadog integration)
+enable_audit_logs = false
+enable_metrics    = false
+# datadog_api_key   = "your-datadog-api-key"
+# datadog_region    = "us1"  # Options: us1, us3, us5, eu1, ap1
