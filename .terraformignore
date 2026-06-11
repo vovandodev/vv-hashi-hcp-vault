@@ -1,0 +1,6 @@
+# Ignore all .tfvars files to prevent credentials from being uploaded
+*.tfvars
+*.tfvars.json
+
+# Keep only the example file for reference
+!terraform.tfvars.example
