@@ -11,7 +11,7 @@ region         = "us-west-2"
 hvn_cidr_block = "172.25.16.0/20"
 
 # Vault Cluster Configuration
-create_vault_cluster = false  # Set to true to create the Vault cluster
+create_vault_cluster = true  # Set to false to create only HVN without Vault cluster
 vault_cluster_id     = "vault-cluster"
 vault_tier           = "dev"  # Options: dev, starter_small, standard_small, standard_medium, standard_large, plus_small, plus_medium, plus_large
 public_endpoint      = true
