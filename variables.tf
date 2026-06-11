@@ -37,7 +37,7 @@ variable "hvn_cidr_block" {
 variable "create_vault_cluster" {
   description = "Whether to create the Vault cluster. Set to false to manage HVN independently."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "vault_cluster_id" {
